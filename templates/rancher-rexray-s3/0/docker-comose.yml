@@ -1,0 +1,16 @@
+version: "2"
+services:
+  rancher-s3:
+    image: "rexray/s3fs"
+    cap_add:
+      - SYS_ADMIN
+    privileged: true
+    environment:
+      AWSACCESSKEYID: "${AWS_ACCESS_KEY_ID}"
+      AWSSECRETACCESSKEY: "${AWS_SECRET_KEY_ID}"
+    volumes:
+      - "/dev:/dev"
+      - "/run:/run"
+      - "/var/lib/rexray/volumes:/var/lib/rexray/volumes:shared"
+      - "/etc/rexray:/etc/rexray"
+    tty: true
