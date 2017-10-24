@@ -1,0 +1,14 @@
+version: "2"
+services:
+  rancher-s3:
+    image : fahim74/rancher-rexray-s3-plugin
+    network_mode: host
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      S3FS_ENTRY: "${S3FS_ENTRY}"
+      S3FS_ACCESSKEY: "${S3FS_ACCESSKEY}"
+      S3FS_SECRETKEY: "${S3FS_SECRETKEY}"
+      S3FS_OPTIONS: "${S3FS_OPTIONS}"
+    volumes:
+      - "/var/lib/rexray/volumes:/var/lib/rexray/volumes:shared"

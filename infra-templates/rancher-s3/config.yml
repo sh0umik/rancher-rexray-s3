@@ -1,7 +1,7 @@
-name: Rexray S3FS
+name: Rancher S3FS based on Rexray S3FS
 description: |
-  Docker volume plugin for S3FS Rexray.
-version: 0.1.0
+  Rancer volume storage plugin for S3.
+version: 0.2.0
 category: Storage
 labels:
   io.rancher.certified: rancher
